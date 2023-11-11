@@ -3,8 +3,12 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define me = Character("me")
+define advisor = Character("advisor")
 
+define hide_textbox = Character(None,window_background=None)
+
+default resources = 10
 
 # The game starts here.
 
@@ -17,17 +21,42 @@ label start:
     scene bg room
 
     # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
+    # replace it by adding a file named "Alex happy.png" to the images
     # directory.
 
-    show eileen happy
+    show alex happy
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    advisor "You've created a new Ren'Py game."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    advisor "Once you add a story, pictures, and music, you can release it to the world!"
 
-    # This ends the game.
+    me "Thank you, Ren'Py!"
 
-    return
+    jump map
+
+
+label map:
+
+    show map
+    show screen gui_game_menu
+
+    hide_textbox ""
+
+
+screen gui_game_menu():
+    hbox:
+        imagebutton:
+            auto "house %s.png"
+            action Function(decrement_resources(1))
+        text "Resources: [resources]"
+
+
+init python:
+    def decrement_resources(amount):
+        global resources
+        resources -= amount
+        if resources < 0:
+            resources = 0
+        return Jump("map")
