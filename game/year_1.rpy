@@ -1,6 +1,7 @@
 define connor = Character("Connor Manuel")
 define hunter = Character("Hunter")
 define ghost = Character("Ghost")
+define crowd = Character("All")
 default conman = False
 default wolves = False
 default flu = False
@@ -286,3 +287,57 @@ label the_ghost:
 
     jump map
     
+    label poop_bad
+
+    show eucieneutral
+    eucie "Hey, have you noticed the fish tasting like poop recently?"
+    hide eucieneutral
+    show hunterproud
+
+    hunter "I can’t blame those buggers. I bathed in the lake two weeks ago and my wife has refused to be in the same room since"
+    hunter "I started smelling of fragrant backside. Something's weird in those blues."
+    hide hunterproud
+    show earnestthink
+
+    earnest "How mysterious. We must have been cursed! Bad water caused by a presence of evil within the village."
+    earnest "We must interrogate every townsman until we find our source of this vile “backside” and expel them. Right, glorious leader?"
+
+    hide earnestthink
+
+    narrator "The memory of Ernest and the other townsfolk dumping sewage into the water pops into your mind."
+    narrator "You tell Ernest that you’ll take care of it eventually."
+    jump the_wolves
+
+    label poop_good
+
+    narrator "You admire the new toilets sparkling in the evening sun. You almost cry at the sight of their beauty. It brings a tear to your eye."
+    narrator "Its immaculate ramshack wooden structure the envy of eyes all over town. Villagers gather to your side to observe the passing sun"
+    narrator "as it highlights the gorgeous pillar of plumbing before you all. The ritual lasts all night, and many flushes are heard around the village."
+    narrator "When daybreak comes, you break from the trance and resume your duties."
+
+    jump the_wolves
+
+    label house_party
+
+    narrator "Long nights of work build to a large amount of stress on your plate. It isn’t long before Earnest suggests an idea to lighten your load."
+    narrator "After all, you do deserve it. The long wait draws to a brisk end, before long the eve of the party arrives."
+
+    narrator "Merry voices echo throughout the halls as drinks and food are distributed with reckless abandon. A comforting tone lit the dark skies beyond."
+    show earnesthappy 
+    earnest "Oh leader, our trust in you is never broken. You’ve thrown us all such a brilliant party."
+    hide earnesthappy
+    show hunterhappy
+
+    hunter "Yeah! Anoth’r one for the greatest host! Cheers!"
+    hide hunterhappy
+    show eucieeager
+
+    eucie "And for all us living here under his gracious care!"
+    hide eucieeager
+
+    show earnesthappy
+    earnest "Hip Hip!"
+
+    crowd "Hooray!"
+    jump the_flu
+

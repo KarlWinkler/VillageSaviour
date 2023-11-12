@@ -529,3 +529,10 @@ Version: b'2.1 ATI-5.1.35'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1690, 951) drawable=(3380, 1902)
 Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
