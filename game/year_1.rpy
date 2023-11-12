@@ -6,7 +6,12 @@ default wolves = False
 default flu = False
 
 label year_1:
+    scene town_square
+    hide screen trackers    
+    hide screen gui_map_menu
+
     jump the_conman
+
 
 label the_conman:
     narrator "Content with your decisions or not, time marches on. You find yourself walking the streets of your new home. The air is peaceful, the skies above dripping with the dew of fresh spring day. It’s in this fresh air you find your pondering rudely interrupted by a sudden commotion."
@@ -27,21 +32,26 @@ label the_conman:
         "No":
             jump no_donate
 
-    jump the_wolves
-
 
 label yes_donate:
+    $ conman = True
     connor "Oh my, you are too kind! And far too trusting, sucker! Automatons? Little green men? Ohoho- What a goof!"
 
     earnest "Well, can’t say I didn’t warn you. Did I not tell you, look out for yourself first my lord, we are all in your debt, and will stand by you." 
 
+    jump the_wolves
+
 
 label no_donate:
+    $ conman = False
     connor "You fail to see my genius! I- I **kicks you** You buffoon!"
 
     earnest "Hunter! Take this scum away! Let him not harm our lord!"
 
     hunter "Huh? Me? Ok!"
+
+    jump the_wolves
+
 
 
 label the_wolves:
@@ -89,17 +99,22 @@ label the_wolves:
         "Build":
             jump build
 
-    jump the_flu
 
 
 label hunt:
+    $ wolves = True
     narrator "You hear tell of the hunt on the eve of the festival. The wolves that had attacked Earnest so long ago would never hurt another soul. Perhaps you didn’t need all the gruesome details, but Hunter was a bit too eager to share his bold exploits, and you feel as though you’ve grown closer."
     # //-wolf points +1000 gold
 
+    jump the_flu
+
 
 label build:
+    $ wolves = False
     narrator "While Hunter is initially disappointed by the decision, the hunt quickly takes the thoughts off his mind. And the town quickly bustles to life after the festivities, working hard to repair the wall."
     # //-300 gold -little energy
+
+    jump the_flu
 
 
 label the_flu:
@@ -122,18 +137,22 @@ label the_flu:
             jump ignore_eucie
         "Visit the neighbouring town":
             jump visit_neighbouring_town
-
-    jump the_ghost
       
 
 label ignore_eucie:
+    $ flu = True
     # // Health infrastructure not improved
     narrator "Heeding Earnest’s advice brings you on a direct path home, care. The days of winter pass slowly in your isolation, but you keep your health. Within 2 weeks, Earnest knocks upon your door. The coast clear, the villagers again healthy, you resume your duties as usual."
 
+    jump the_ghost
+
 
 label visit_neighbouring_town:
+    $ flu = False
     # // -500 gold +1 health -a lot of energy
     narrator "After a day’s hike, you make it to the other town. The apothecary is a jovial spirit, in fact it hardly takes a moment’s hesitation, and a small sack of gold before he gladly spills all his secrets of medicine. The most trying task of all remains at home however. The medicine is difficult to produce, it takes a full week of effort before the infrastructure is in place to start curing the citizens, by which point most of the town has recovered anyway, but oh well it might help in future years."
+
+    jump the_ghost
 
 
 label the_ghost:
@@ -158,12 +177,13 @@ label the_ghost:
     else:
         ghost "Your burning kindness brings them close. Their burning hate tears your skin. Their coughs on you, your plague is spite. In truth, the burning love shines through."
 
-    # TODO: add optional events
+    # # TODO: add optional events
 
-    # ghost(OP1-1) (Very Angry) In filth they bathe the filth that bathe. And rot, your children will rot, and feed yours with rot. From rot the filth will breed, and hell’s gates will open. Famine, disease and death. It joins with you.
+    # # ghost(OP1-1) (Very Angry) In filth they bathe the filth that bathe. And rot, your children will rot, and feed yours with rot. From rot the filth will breed, and hell’s gates will open. Famine, disease and death. It joins with you.
 
-    # ghost(OP1-2) (Contemplative) You built a toilet.
+    # # ghost(OP1-2) (Contemplative) You built a toilet.
 
-    # ghost(OP2) (Very Angry) In decadence you sour, like rotting ale, like dying fruit. You are the disease that breeds within these walls. You rot away the woods beside, kill beast and bird alike. Your joys are hollow. Your suffering eternal.
+    # # ghost(OP2) (Very Angry) In decadence you sour, like rotting ale, like dying fruit. You are the disease that breeds within these walls. You rot away the woods beside, kill beast and bird alike. Your joys are hollow. Your suffering eternal.
 
+    jump map
     
