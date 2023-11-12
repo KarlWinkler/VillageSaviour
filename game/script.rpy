@@ -8,8 +8,6 @@ define narrator = Character("Narrator")
 define earnest = Character("Earnest")
 define eucie = Character("Eucie")
 
-define hide_textbox = Character(None,window_background=None)
-
 default resources = 10
 default money = 1000
 default year = 0
@@ -107,40 +105,3 @@ label ignore:
     narrator "You continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
 
     jump bad_ending
-
-
-label map:
-    scene map
-    show map
-    show screen trackers    
-    show screen gui_map_menu
-    hide_textbox ""
-
-    if year == 0:
-        jump year_1
-    elif year == 1:
-        jump good_ending
-
-
-screen trackers:
-    hbox:
-        xcenter 0.5 yalign 0
-        text "Resources: [resources]"
-
-
-screen gui_map_menu():
-    hbox:
-        xalign 0.6 yalign 0.2
-        imagebutton:
-            auto "house %s.png"
-            sensitive resources >= 2
-            action Function(decrement_resources, 2)
-
-
-init python:
-    def decrement_resources(amount):
-        global resources
-        resources -= amount
-        if resources < 0:
-            resources = 0
-        return renpy.restart_interaction()

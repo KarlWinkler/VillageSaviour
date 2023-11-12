@@ -51,7 +51,7 @@ label yes_donate:
     show earnestthink
     earnest "Well, can’t say I didn’t warn you. Did I not tell you, look out for yourself first my lord, we are all in your debt, and will stand by you." 
 
-    jump the_wolves
+    jump poop
 
 
 label no_donate:
@@ -73,8 +73,15 @@ label no_donate:
     narrator "Hunter than chased him out of town"
     hide connorangry
     with dissolve
-    jump the_wolves
+    jump poop
 
+
+label poop:
+    hide earnestthink
+    if toilet:
+        jump poop_good
+    else:
+        jump poop_bad
 
 
 label the_wolves:
@@ -286,8 +293,9 @@ label the_ghost:
     # # ghost(OP2) (Very Angry) In decadence you sour, like rotting ale, like dying fruit. You are the disease that breeds within these walls. You rot away the woods beside, kill beast and bird alike. Your joys are hollow. Your suffering eternal.
 
     jump map
-    
-    label poop_bad
+
+  
+label poop_bad:
 
     show eucieneutral
     eucie "Hey, have you noticed the fish tasting like poop recently?"
@@ -306,9 +314,11 @@ label the_ghost:
 
     narrator "The memory of Ernest and the other townsfolk dumping sewage into the water pops into your mind."
     narrator "You tell Ernest that you’ll take care of it eventually."
+    
     jump the_wolves
 
-    label poop_good
+
+label poop_good:
 
     narrator "You admire the new toilets sparkling in the evening sun. You almost cry at the sight of their beauty. It brings a tear to your eye."
     narrator "Its immaculate ramshack wooden structure the envy of eyes all over town. Villagers gather to your side to observe the passing sun"
@@ -317,7 +327,8 @@ label the_ghost:
 
     jump the_wolves
 
-    label house_party
+
+label house_party:
 
     narrator "Long nights of work build to a large amount of stress on your plate. It isn’t long before Earnest suggests an idea to lighten your load."
     narrator "After all, you do deserve it. The long wait draws to a brisk end, before long the eve of the party arrives."
