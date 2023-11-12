@@ -1,4 +1,4 @@
-﻿import year_1
+﻿#import year_1
 
 # The script of the game goes in this file.
 
@@ -52,7 +52,8 @@ label ignore_him:
 
 
 label help_him:
-    earnest "What strength! You saved my life, and the lives of my people. A whole village is in your debt. Perhaps my faith blinds my judgement, but I see you as a miracle. Oh great lord, won’t you please, please lend your leadership to my town. I struggle to be their guiding voice, but you, you are so bold. Please lead us forward"
+    earnest "What strength! You saved my life, and the lives of my people. A whole village is in your debt. Perhaps my faith blinds my judgement, but I see you as a miracle."
+    earnest "Oh great lord, won’t you please, please lend your leadership to my town. I struggle to be their guiding voice, but you, you are so bold. Please lead us forward"
 
     menu:
         "Nah":
@@ -62,14 +63,14 @@ label help_him:
 
 
 label reject_town:
-    narrator "You go back to your hut in the mountains and continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
+    narrator "You go back to your camp in the mountains and continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
 
 
 label accept_town:
-    narrator "It's my greatest pleasure to pass on my role to you. Under you, our town shall become the richest and most plentiful in all the land. Follow me, I'll lead you there."
-    narrator "The townsfolk cheer as you are crowned their new leader. "
+    earnest "It's my greatest pleasure to pass on my role to you. Under you, our town shall become the richest and most plentiful in all the land. Follow me, I'll lead you there."
+    earnest "The townsfolk cheer as you are crowned their new leader. "
     eucie "We all heard of your heroic deed! I know our town will prosper under your reign."
-    narrator "here's the town's resources. Use them wisely, and our town will grow rich."
+    earnest "Here's the town's resources. Use them wisely, and our town will grow rich."
 
     menu:
         "Continue":
