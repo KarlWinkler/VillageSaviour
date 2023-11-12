@@ -3,8 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define me = Character("me")
-define advisor = Character("advisor")
+define me = Character("Me")
+define narrator = Character("Narrator")
+define ernest = Character("Ernest")
+define eucie = Character("Eucie")
 
 define hide_textbox = Character(None,window_background=None)
 
@@ -14,43 +16,89 @@ default resources = 10
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
     scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "Alex happy.png" to the images
-    # directory.
 
     show alex happy
 
-    # These display lines of dialogue.
+    jump prologue
 
-    advisor "You've created a new Ren'Py game."
 
-    advisor "Once you add a story, pictures, and music, you can release it to the world!"
+label prologue:
+    narrator "Society has become too oppressive for you to continue living there. Travelling among the mountain’s valleys you’ve come searching for a life apart from the hellscapes you’ve known. "
+    narrator "Suddenly, you hear a scream coming from the forest."
 
-    me "Thank you, Ren'Py!"
+    menu:
+        "Investigate":
+            jump investigate
+        "Ignore":
+            jump ignore
 
-    jump map
+
+label investigate:
+    narrator "Chasing the sounds, you find a man, clutched loosely by the quickly closing jaws of a pair of wolves. Their growling and howling echoing into the hollow woodlands around.."
+    ernest "Please oh gods above, I pray grant me a miracle"
+    
+    menu:
+        "Ignore him":
+            jump ignore_him
+        "Help him":
+            jump help_him
+
+
+label ignore_him:
+    narrator "The miracle never happen. Meanwhile, you continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
+
+
+label help_him:
+    ernest "What strength! You saved my life, and the lives of my people. A whole village is in your debt. Perhaps my faith blinds my judgement, but I see you as a miracle. Oh great lord, won’t you please, please lend your leadership to my town. I struggle to be their guiding voice, but you, you are so bold. Please lead us forward"
+
+    menu:
+        "Nah":
+            jump reject_town
+        "Yes":
+            jump accept_town
+
+
+label reject_town:
+    narrator "You go back to your hut in the mountains and continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
+
+
+label accept_town:
+    narrator "It's my greatest pleasure to pass on my role to you. Under you, our town shall become the richest and most plentiful in all the land. Follow me, I'll lead you there."
+    narrator "The townsfolk cheer as you are crowned their new leader. "
+    eucie "We all heard of your heroic deed! I know our town will prosper under your reign."
+    narrator "here's the town's resources. Use them wisely, and our town will grow rich."
+
+    menu:
+        "Continue":
+            jump map
+
+
+label ignore:
+    narrator "You continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
 
 
 label map:
-
+    scene map
     show map
-    show screen gui_game_menu
-
+    show screen trackers    
+    show screen gui_map_menu
     hide_textbox ""
 
 
-screen gui_game_menu():
+screen trackers:
     hbox:
+        xcenter 0.5 yalign 0
+        text "Resources: [resources]"
+
+
+screen gui_map_menu():
+    hbox:
+        xalign 0.6 yalign 0.2
         imagebutton:
             auto "house %s.png"
-            action Function(decrement_resources(1))
-        text "Resources: [resources]"
+            sensitive resources >= 2
+            action Function(decrement_resources, 2)
 
 
 init python:
@@ -59,4 +107,4 @@ init python:
         resources -= amount
         if resources < 0:
             resources = 0
-        return Jump("map")
+        return renpy.restart_interaction()
