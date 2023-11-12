@@ -162,14 +162,13 @@ label the_wolves:
             jump build
 
 
-
 label hunt:
     $ wolves = True
     narrator "You hear tell of the hunt on the eve of the festival. The wolves that had attacked Earnest so long ago would never hurt another soul."
     narrator "Perhaps you didn’t need all the gruesome details, but Hunter was a bit too eager to share his bold exploits, and you feel as though you’ve grown closer."
     # //-wolf points +1000 gold
 
-    jump the_flu
+    jump manor
 
 
 label build:
@@ -178,10 +177,18 @@ label build:
     narrator "And the town quickly bustles to life after the festivities, working hard to repair the wall."
     # //-300 gold -little energy
 
-    jump the_flu
+    jump manor
+
+
+label manor:
+    if manor:
+        jump house_party
+    else:
+        jump the_flu
 
 
 label the_flu:
+    hide earnesthappy
     narrator "You're taking a walk with Earnest, admiring the softly falling snow and lack of wolves."
     narrator "It's quiet, most of the townsfolk are inside their homes, presumably preparing for the holidays."
 
