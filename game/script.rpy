@@ -1,11 +1,13 @@
-﻿# The script of the game goes in this file.
+﻿import year_1
+
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
 define me = Character("Me")
 define narrator = Character("Narrator")
-define ernest = Character("Ernest")
+define earnest = Character("Earnest")
 define eucie = Character("Eucie")
 
 define hide_textbox = Character(None,window_background=None)
@@ -36,7 +38,7 @@ label prologue:
 
 label investigate:
     narrator "Chasing the sounds, you find a man, clutched loosely by the quickly closing jaws of a pair of wolves. Their growling and howling echoing into the hollow woodlands around.."
-    ernest "Please oh gods above, I pray grant me a miracle"
+    earnest "Please oh gods above, I pray grant me a miracle"
     
     menu:
         "Ignore him":
@@ -50,7 +52,7 @@ label ignore_him:
 
 
 label help_him:
-    ernest "What strength! You saved my life, and the lives of my people. A whole village is in your debt. Perhaps my faith blinds my judgement, but I see you as a miracle. Oh great lord, won’t you please, please lend your leadership to my town. I struggle to be their guiding voice, but you, you are so bold. Please lead us forward"
+    earnest "What strength! You saved my life, and the lives of my people. A whole village is in your debt. Perhaps my faith blinds my judgement, but I see you as a miracle. Oh great lord, won’t you please, please lend your leadership to my town. I struggle to be their guiding voice, but you, you are so bold. Please lead us forward"
 
     menu:
         "Nah":
