@@ -88,6 +88,8 @@ label map:
     show screen gui_map_menu
     hide_textbox ""
 
+    jump year_1
+
 
 screen trackers:
     hbox:
