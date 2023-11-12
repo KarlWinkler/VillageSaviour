@@ -23,7 +23,7 @@ screen trackers:
 
 screen gui_map_menu():
     hbox:
-        xalign 0.6 yalign 0.4
+        xalign 0.425 yalign 0.15
         imagebutton:
             auto "emptyplot %s.png"
             sensitive resources >= 2 and toilet == False
