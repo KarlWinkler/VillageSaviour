@@ -1,6 +1,4 @@
-﻿#import year_1
-
-# The script of the game goes in this file.
+﻿# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -50,6 +48,8 @@ label investigate:
 label ignore_him:
     narrator "The miracle never happen. Meanwhile, you continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
 
+    jump bad_ending
+
 
 label help_him:
     earnest "What strength! You saved my life, and the lives of my people. A whole village is in your debt. Perhaps my faith blinds my judgement, but I see you as a miracle."
@@ -65,6 +65,8 @@ label help_him:
 label reject_town:
     narrator "You go back to your camp in the mountains and continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
 
+    jump bad_ending
+
 
 label accept_town:
     earnest "It's my greatest pleasure to pass on my role to you. Under you, our town shall become the richest and most plentiful in all the land. Follow me, I'll lead you there."
@@ -79,6 +81,8 @@ label accept_town:
 
 label ignore:
     narrator "You continue preparing breakfast. The rest of your life is uneventful. Eventually, you die. The end."
+
+    jump bad_ending
 
 
 label map:
