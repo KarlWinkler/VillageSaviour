@@ -8,7 +8,7 @@ default flu = False
 
 label year_1:
     $ year = 1
-    scene town_square
+    scene woodsout
     hide screen trackers    
     hide screen gui_map_menu
 
@@ -19,7 +19,7 @@ label the_conman:
     narrator "Content with your decisions or not, time marches on. You find yourself walking the streets of your new home."
     narrator "The air is peaceful, the skies above dripping with the dew of fresh spring day. It’s in this fresh air you find your pondering rudely interrupted by a sudden commotion."
 
-    scene town_square
+    scene woodsout
 
     narrator "Rushing to the market stalls you’ve only recently become acquainted with, you approach a booming, cunning voice erupting from a crate tossed out into the middle."
     
@@ -85,6 +85,7 @@ label poop:
 
 
 label the_wolves:
+    scene fallwoods
     narrator "Resting atop a bench, watching the autumn leaves fall for the first time since you’ve taken power, you breathe."
     narrator "It’s a cool breeze that rushes to fill your nostrils as you see the streets and skies painted a beautiful orange hue."
     narrator "You’ve made decisions, decisions that have helped bring about this peaceful serenity."
@@ -164,6 +165,7 @@ label the_wolves:
 
 label hunt:
     $ wolves = True
+    scene tempblack
     narrator "You hear tell of the hunt on the eve of the festival. The wolves that had attacked Earnest so long ago would never hurt another soul."
     narrator "Perhaps you didn’t need all the gruesome details, but Hunter was a bit too eager to share his bold exploits, and you feel as though you’ve grown closer."
     # //-wolf points +1000 gold
@@ -173,6 +175,7 @@ label hunt:
 
 label build:
     $ wolves = False
+    scene tempblack 
     narrator "While Hunter is initially disappointed by the decision, the hunt quickly takes the thoughts off his mind."
     narrator "And the town quickly bustles to life after the festivities, working hard to repair the wall."
     # //-300 gold -little energy
@@ -226,6 +229,7 @@ label the_flu:
 
 label ignore_eucie:
     $ flu = True
+    scene tempblack
     # // Health infrastructure not improved
     narrator "Heeding Earnest’s advice brings you on a direct path home, care."
     narrator "The days of winter pass slowly in your isolation, but you keep your health. Within 2 weeks, Earnest knocks upon your door."
@@ -236,6 +240,7 @@ label ignore_eucie:
 
 label visit_neighbouring_town:
     $ flu = False
+    scene tempblack
     # // -500 gold +1 health -a lot of energy
     narrator "After a day’s hike, you make it to the other town."
     narrator "The apothecary is a jovial spirit, in fact it hardly takes a moment’s hesitation, and a small sack of gold before he gladly spills all his secrets of medicine."
@@ -247,6 +252,7 @@ label visit_neighbouring_town:
 
 
 label the_ghost:
+    scene tempblack
     narrator "And as winter winds give way to spring dews once again, you approach a full year passed in the village."
     narrator "Before the anniversary of your appointment arrives, you spend an evening surrounded in the warm embrace of all you’ve come to know."
     narrator "Hunter, Eucie, Earnest, and even more warm faces greet you in warm rejoice. You’ve made an impression on them all, and they’ve grown to rely on your guidance."
@@ -300,9 +306,10 @@ label the_ghost:
     # # ghost(OP2) (Very Angry) In decadence you sour, like rotting ale, like dying fruit. You are the disease that breeds within these walls. You rot away the woods beside, kill beast and bird alike. Your joys are hollow. Your suffering eternal.
 
     jump map
+    
 
-  
 label poop_bad:
+    scene lakeback
 
     show eucieneutral
     eucie "Hey, have you noticed the fish tasting like poop recently?"
@@ -326,6 +333,7 @@ label poop_bad:
 
 
 label poop_good:
+    scene toieltonhill
 
     narrator "You admire the new toilets sparkling in the evening sun. You almost cry at the sight of their beauty. It brings a tear to your eye."
     narrator "Its immaculate ramshack wooden structure the envy of eyes all over town. Villagers gather to your side to observe the passing sun"
@@ -336,6 +344,7 @@ label poop_good:
 
 
 label house_party:
+    scene tempblack
 
     narrator "Long nights of work build to a large amount of stress on your plate. It isn’t long before Earnest suggests an idea to lighten your load."
     narrator "After all, you do deserve it. The long wait draws to a brisk end, before long the eve of the party arrives."

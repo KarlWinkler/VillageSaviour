@@ -20,7 +20,7 @@ default year = 0
 
 label start:
 
-    scene bg room
+    scene woodsout
 
     jump prologue
 
