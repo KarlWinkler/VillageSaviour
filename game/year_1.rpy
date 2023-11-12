@@ -156,26 +156,37 @@ label visit_neighbouring_town:
 
 
 label the_ghost:
-    narrator "And as winter winds give way to spring dews once again, you approach a full year passed in the village. Before the anniversary of your appointment arrives, you spend an evening surrounded in the warm embrace of all you’ve come to know. Hunter, Eucie, Earnest, and even more warm faces greet you in warm rejoice. You’ve made an impression on them all, and they’ve grown to rely on your guidance. As the firelight of the ceremony grows dim, you return home. Comforted by the warm darkness, you drift into nothingness."
+    narrator "And as winter winds give way to spring dews once again, you approach a full year passed in the village."
+    narrator "Before the anniversary of your appointment arrives, you spend an evening surrounded in the warm embrace of all you’ve come to know."
+    narrator "Hunter, Eucie, Earnest, and even more warm faces greet you in warm rejoice. You’ve made an impression on them all, and they’ve grown to rely on your guidance."
+    narrator "As the firelight of the ceremony grows dim, you return home. Comforted by the warm darkness, you drift into nothingness."
 
     narrator "Suddenly, a figure appears before you, somewhere in the endless expanse of the void."
 
-    ghost "Oh being of fate. The bonds of hell, shackle themselves to you. Lives countless, rest. Rest in blazing agony, awaiting the fate you choose. Bold are you to take lives in your hands. Your wrists, already lashed with the embers of mistakes." 
+    ghost "Oh being of fate. The bonds of hell, shackle themselves to you. Lives countless, rest."
+    ghost "Rest in blazing agony, awaiting the fate you choose. Bold are you to take lives in your hands. Your wrists, already lashed with the embers of mistakes." 
 
     if conman:
-        ghost "Your kindness, it’s violent unyielding naivety. You err and trust. You err and put your lives in other’s hands. And in these blazing mistakes, you take a leap, one you will live to see paid back in full."
+        ghost "Your kindness, it’s violent unyielding naivety. You err and trust."
+        ghost "You err and put your lives in other’s hands. And in these blazing mistakes, you take a leap, one you will live to see paid back in full."
     else:
-        ghost "Your shrewdness, it pays. It pays in pain, it pays in broken trust. It’s wrathful hate burns within you. Yet no loss is the greatest loss of all. You prosper, but wilt. You suffer. You will always suffer."
+        ghost "Your shrewdness, it pays. It pays in pain, it pays in broken trust. It’s wrathful hate burns within you."
+        ghost "Yet no loss is the greatest loss of all. You prosper, but wilt. You suffer. You will always suffer."
 
     if wolves:
-        ghost "Hunt. Hunt and kill. Revenge, it is not folly, but sabotage. You must kill. You will always kill. If lives are in their hands they must take them too. You chose the path of hell, it lashes at you with great flames. Kill your children too. Take all with you on the path."
+        ghost "Hunt. Hunt and kill. Revenge, it is not folly, but sabotage. You must kill. You will always kill."
+        ghost "If lives are in their hands they must take them too. You chose the path of hell, it lashes at you with great flames."
+        ghost "Kill your children too. Take all with you on the path."
     else:
-        ghost "You build a future you will never see. When hellhounds bark from heaven’s gate, then crimson embers tear down your walls. What use is there? You fight for life you’ve damned already, taking upon your shoulders an endless fight. And yet they will thank you."
+        ghost "You build a future you will never see. When hellhounds bark from heaven’s gate, then crimson embers tear down your walls."
+        ghost "What use is there? You fight for life you’ve damned already, taking upon your shoulders an endless fight. And yet they will thank you."
 
     if flu:
-        ghost "Plague. Plague. You will rot. They will rot. They pass with coughs, they leave in coffins. You dug the grave. You brought them hell. The hell you always walk. The future you never see."
+        ghost "Plague. Plague. You will rot. They will rot. They pass with coughs, they leave in coffins."
+        ghost "You dug the grave. You brought them hell. The hell you always walk. The future you never see."
     else:
-        ghost "Your burning kindness brings them close. Their burning hate tears your skin. Their coughs on you, your plague is spite. In truth, the burning love shines through."
+        ghost "Your burning kindness brings them close. Their burning hate tears your skin."
+        ghost "Their coughs on you, your plague is spite. In truth, the burning love shines through."
 
     # TODO: add optional events
 
