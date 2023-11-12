@@ -6,6 +6,7 @@ default wolves = False
 default flu = False
 
 label year_1:
+    $ year = 1
     scene town_square
     hide screen trackers    
     hide screen gui_map_menu

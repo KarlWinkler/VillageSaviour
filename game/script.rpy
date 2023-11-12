@@ -11,6 +11,8 @@ define eucie = Character("Eucie")
 define hide_textbox = Character(None,window_background=None)
 
 default resources = 10
+default money = 1000
+default year = 0
 
 # The game starts here.
 
@@ -92,7 +94,10 @@ label map:
     show screen gui_map_menu
     hide_textbox ""
 
-    jump year_1
+    if year == 0:
+        jump year_1
+    elif year == 1:
+        jump good_ending
 
 
 screen trackers:
